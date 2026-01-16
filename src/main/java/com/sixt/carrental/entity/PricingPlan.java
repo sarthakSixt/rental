@@ -25,7 +25,7 @@ public class PricingPlan{
     private Category category;
 
     @Column(name = "duration_month", nullable = false)
-    private Integer durationMonth;
+    private Integer durationMonths;
 
     @Column(name = "km_package", nullable = false)
     private Integer kmPackage;

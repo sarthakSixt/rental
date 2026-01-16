@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface CarRepository extends JpaRepository<Car, Long> {
 
-    // Find all available cars
+    // All availabl cars
     List<Car> findByStatus(CarStatus status);
 
     // Find available cars by category
