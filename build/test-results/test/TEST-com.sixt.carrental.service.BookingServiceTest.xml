@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Booking Service Tests - Price Snapshot Feature" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-01-21T11:30:21.116Z" hostname="MAC-YQWR6QMY0N" time="0.674">
+  <properties/>
+  <testcase name="Should throw exception when car is not available" classname="com.sixt.carrental.service.BookingServiceTest" time="0.661"/>
+  <testcase name="Should create booking with price snapshot" classname="com.sixt.carrental.service.BookingServiceTest" time="0.006"/>
+  <testcase name="Should calculate correct end date" classname="com.sixt.carrental.service.BookingServiceTest" time="0.003"/>
+  <testcase name="Should mark car as rented after booking" classname="com.sixt.carrental.service.BookingServiceTest" time="0.003"/>
+  <system-out><![CDATA[17:00:21.770 [Test worker] INFO com.sixt.carrental.service.BookingService -- Creating booking: userId=1, carId=1, categoryId=1, durationMonths=3, kmPackage=1000, startDate=2026-01-21
+17:00:21.773 [Test worker] ERROR com.sixt.carrental.service.BookingService -- Car is not available for booking. Current status: RENTED
+17:00:21.781 [Test worker] INFO com.sixt.carrental.service.BookingService -- Creating booking: userId=1, carId=1, categoryId=1, durationMonths=3, kmPackage=1000, startDate=2024-02-01
+17:00:21.782 [Test worker] INFO com.sixt.carrental.service.BookingService -- Saving booking to database...
+17:00:21.782 [Test worker] INFO com.sixt.carrental.service.BookingService -- Booking saved successfully with ID: 1
+17:00:21.782 [Test worker] INFO com.sixt.carrental.service.BookingService -- Marking car 1 as rented
+17:00:21.782 [Test worker] INFO com.sixt.carrental.service.BookingService -- Booking creation completed successfully. Booking ID: 1
+17:00:21.786 [Test worker] INFO com.sixt.carrental.service.BookingService -- Creating booking: userId=1, carId=1, categoryId=1, durationMonths=6, kmPackage=2000, startDate=2024-01-15
+17:00:21.787 [Test worker] INFO com.sixt.carrental.service.BookingService -- Saving booking to database...
+17:00:21.787 [Test worker] INFO com.sixt.carrental.service.BookingService -- Booking saved successfully with ID: null
+17:00:21.787 [Test worker] INFO com.sixt.carrental.service.BookingService -- Marking car 1 as rented
+17:00:21.787 [Test worker] INFO com.sixt.carrental.service.BookingService -- Booking creation completed successfully. Booking ID: null
+17:00:21.789 [Test worker] INFO com.sixt.carrental.service.BookingService -- Creating booking: userId=1, carId=1, categoryId=1, durationMonths=3, kmPackage=1000, startDate=2026-01-21
+17:00:21.789 [Test worker] INFO com.sixt.carrental.service.BookingService -- Saving booking to database...
+17:00:21.789 [Test worker] INFO com.sixt.carrental.service.BookingService -- Booking saved successfully with ID: null
+17:00:21.789 [Test worker] INFO com.sixt.carrental.service.BookingService -- Marking car 1 as rented
+17:00:21.790 [Test worker] INFO com.sixt.carrental.service.BookingService -- Booking creation completed successfully. Booking ID: null
+]]></system-out>
+  <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/Users/s324429/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.17.8/f09415827a71be7ed621c7bd02550678f28bc81c/byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>

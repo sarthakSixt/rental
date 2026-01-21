@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="User Service Tests" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-01-21T11:30:21.827Z" hostname="MAC-YQWR6QMY0N" time="0.045">
+  <properties/>
+  <testcase name="Should return empty when user not found" classname="com.sixt.carrental.service.UserServiceTest" time="0.039"/>
+  <testcase name="Should find user by email" classname="com.sixt.carrental.service.UserServiceTest" time="0.001"/>
+  <testcase name="Should throw exception when email already exists" classname="com.sixt.carrental.service.UserServiceTest" time="0.002"/>
+  <testcase name="Should register user with encrypted password" classname="com.sixt.carrental.service.UserServiceTest" time="0.002"/>
+  <testcase name="Should verify password correctly" classname="com.sixt.carrental.service.UserServiceTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

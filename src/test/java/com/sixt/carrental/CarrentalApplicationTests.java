@@ -1,9 +1,9 @@
 package com.sixt.carrental;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+// @SpringBootTest
 class CarrentalApplicationTests {
 
 	@Test

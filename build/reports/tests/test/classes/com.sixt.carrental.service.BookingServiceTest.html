@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Booking Service Tests - Price Snapshot Feature</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Booking Service Tests - Price Snapshot Feature</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.sixt.carrental.service.html">com.sixt.carrental.service</a> &gt; BookingServiceTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.673s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+<li>
+<a href="#">Standard error</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Should calculate correct end date</td>
+<td class="success">shouldCalculateCorrectEndDate()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Should create booking with price snapshot</td>
+<td class="success">shouldCreateBookingWithPriceSnapshot()</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Should mark car as rented after booking</td>
+<td class="success">shouldMarkCarAsRentedAfterBooking()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Should throw exception when car is not available</td>
+<td class="success">shouldThrowExceptionWhenCarNotAvailable()</td>
+<td class="success">0.661s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre id="class-stdout">17:00:21.770 [Test worker] INFO com.sixt.carrental.service.BookingService -- Creating booking: userId=1, carId=1, categoryId=1, durationMonths=3, kmPackage=1000, startDate=2026-01-21
+17:00:21.773 [Test worker] ERROR com.sixt.carrental.service.BookingService -- Car is not available for booking. Current status: RENTED
+17:00:21.781 [Test worker] INFO com.sixt.carrental.service.BookingService -- Creating booking: userId=1, carId=1, categoryId=1, durationMonths=3, kmPackage=1000, startDate=2024-02-01
+17:00:21.782 [Test worker] INFO com.sixt.carrental.service.BookingService -- Saving booking to database...
+17:00:21.782 [Test worker] INFO com.sixt.carrental.service.BookingService -- Booking saved successfully with ID: 1
+17:00:21.782 [Test worker] INFO com.sixt.carrental.service.BookingService -- Marking car 1 as rented
+17:00:21.782 [Test worker] INFO com.sixt.carrental.service.BookingService -- Booking creation completed successfully. Booking ID: 1
+17:00:21.786 [Test worker] INFO com.sixt.carrental.service.BookingService -- Creating booking: userId=1, carId=1, categoryId=1, durationMonths=6, kmPackage=2000, startDate=2024-01-15
+17:00:21.787 [Test worker] INFO com.sixt.carrental.service.BookingService -- Saving booking to database...
+17:00:21.787 [Test worker] INFO com.sixt.carrental.service.BookingService -- Booking saved successfully with ID: null
+17:00:21.787 [Test worker] INFO com.sixt.carrental.service.BookingService -- Marking car 1 as rented
+17:00:21.787 [Test worker] INFO com.sixt.carrental.service.BookingService -- Booking creation completed successfully. Booking ID: null
+17:00:21.789 [Test worker] INFO com.sixt.carrental.service.BookingService -- Creating booking: userId=1, carId=1, categoryId=1, durationMonths=3, kmPackage=1000, startDate=2026-01-21
+17:00:21.789 [Test worker] INFO com.sixt.carrental.service.BookingService -- Saving booking to database...
+17:00:21.789 [Test worker] INFO com.sixt.carrental.service.BookingService -- Booking saved successfully with ID: null
+17:00:21.789 [Test worker] INFO com.sixt.carrental.service.BookingService -- Marking car 1 as rented
+17:00:21.790 [Test worker] INFO com.sixt.carrental.service.BookingService -- Booking creation completed successfully. Booking ID: null
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stdout">Copy</button>
+</span>
+</div>
+<div class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre id="class-stderr">Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/Users/s324429/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.17.8/f09415827a71be7ed621c7bd02550678f28bc81c/byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stderr">Copy</button>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.2.1</a> at Jan 21, 2026, 5:00:21 PM</p>
+</div>
+</div>
+</body>
+</html>

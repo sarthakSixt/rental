@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.267s</div>
+<div class="counter">0.007s</div>
 <p>duration</p>
 </div>
 </td>
@@ -63,12 +63,6 @@
 <li>
 <a href="#">Tests</a>
 </li>
-<li>
-<a href="#">Standard output</a>
-</li>
-<li>
-<a href="#">Standard error</a>
-</li>
 </ul>
 <div class="tab">
 <h2>Tests</h2>
@@ -82,71 +76,10 @@
 </thead>
 <tr>
 <td class="success">contextLoads()</td>
-<td class="success">0.267s</td>
+<td class="success">0.007s</td>
 <td class="success">passed</td>
 </tr>
 </table>
-</div>
-<div class="tab">
-<h2>Standard output</h2>
-<span class="code">
-<pre id="class-stdout">13:59:33.516 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.sixt.carrental.CarrentalApplicationTests]: CarrentalApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-13:59:33.570 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.sixt.carrental.CarrentalApplication for test class com.sixt.carrental.CarrentalApplicationTests
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-
- :: Spring Boot ::                (v4.0.1)
-
-2026-01-21T13:59:33.738+05:30  INFO 54595 --- [car-rental-service-test] [    Test worker] c.s.carrental.CarrentalApplicationTests  : Starting CarrentalApplicationTests using Java 25.0.1 with PID 54595 (started by s324429 in /Users/s324429/Documents/rental)
-2026-01-21T13:59:33.739+05:30  INFO 54595 --- [car-rental-service-test] [    Test worker] c.s.carrental.CarrentalApplicationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2026-01-21T13:59:34.363+05:30  INFO 54595 --- [car-rental-service-test] [    Test worker] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-01-21T13:59:34.389+05:30  INFO 54595 --- [car-rental-service-test] [    Test worker] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.0.Final
-2026-01-21T13:59:34.621+05:30  INFO 54595 --- [car-rental-service-test] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-01-21T13:59:34.702+05:30  INFO 54595 --- [car-rental-service-test] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2026-01-21T13:59:34.703+05:30  INFO 54595 --- [car-rental-service-test] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-01-21T13:59:34.715+05:30  WARN 54595 --- [car-rental-service-test] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-01-21T13:59:34.728+05:30  INFO 54595 --- [car-rental-service-test] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:h2:mem:testdb]
-	Database driver: H2 JDBC Driver
-	Database dialect: H2Dialect
-	Database version: 2.4.240
-	Default catalog/schema: TESTDB/PUBLIC
-	Autocommit mode: undefined/unknown
-	Isolation level: READ_COMMITTED [default READ_COMMITTED]
-	JDBC fetch size: 100
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-01-21T13:59:35.237+05:30  INFO 54595 --- [car-rental-service-test] [    Test worker] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-01-21T13:59:35.486+05:30  WARN 54595 --- [car-rental-service-test] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-01-21T13:59:35.538+05:30  WARN 54595 --- [car-rental-service-test] [    Test worker] .s.a.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: f5e1685f-d0dd-4c51-9cd4-e03247bbffc3
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2026-01-21T13:59:35.782+05:30  INFO 54595 --- [car-rental-service-test] [    Test worker] c.s.carrental.CarrentalApplicationTests  : Started CarrentalApplicationTests in 2.144 seconds (process running for 2.749)
-Skipping data seeding in test environment
-</pre>
-<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stdout">Copy</button>
-</span>
-</div>
-<div class="tab">
-<h2>Standard error</h2>
-<span class="code">
-<pre id="class-stderr">Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
-WARNING: A Java agent has been loaded dynamically (/Users/s324429/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.17.8/f09415827a71be7ed621c7bd02550678f28bc81c/byte-buddy-agent-1.17.8.jar)
-WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
-WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
-WARNING: Dynamic loading of agents will be disallowed by default in a future release
-</pre>
-<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stderr">Copy</button>
-</span>
 </div>
 </div>
 <div id="footer">
@@ -156,7 +89,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 9.2.1</a> at Jan 21, 2026, 1:59:36 PM</p>
+<a href="https://www.gradle.org">Gradle 9.2.1</a> at Jan 21, 2026, 5:00:21 PM</p>
 </div>
 </div>
 </body>
