@@ -31,7 +31,7 @@ public class CarService{
     }
 
     // Get the AVAILABLE cars by brand
-    public List<Car> getAvailableCarsByCategory(String brand){
+    public List<Car> getAvailableCarsByBrand(String brand){
         return carRepository.findByBrandAndStatus(brand, CarStatus.AVAILABLE);
     }
 

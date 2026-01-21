@@ -9,6 +9,7 @@ import com.sixt.carrental.entity.User;
 import com.sixt.carrental.repository.BookingRepository;
 import com.sixt.carrental.repository.CarRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,7 +20,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-
+@Slf4j
 public class BookingService {
     private final BookingRepository bookingRepository;
     private final CarService carService;
@@ -31,30 +32,48 @@ public class BookingService {
     public Booking createBooking(Long userId, Long carId, Long categoryId,
                                  Integer durationMonths, Integer kmPackage,
                                  LocalDate startDate){
+        log.info("Creating booking: userId={}, carId={}, categoryId={}, durationMonths={}, kmPackage={}, startDate={}",
+                userId, carId, categoryId, durationMonths, kmPackage, startDate);
+        
         // 1. Validate user exists
         User user = userService.findById(userId)
-                .orElseThrow(() -> new RuntimeException("User not found with ID: " + userId));
+                .orElseThrow(() -> {
+                    log.error("User not found with ID: {}", userId);
+                    return new RuntimeException("User not found with ID: " + userId);
+                });
+        log.debug("User found: {}", user.getEmail());
 
         // 2. Validate car is available
         Car car = carService.findById(carId)
-                .orElseThrow(() -> new RuntimeException("Car not found with ID: " + carId));
+                .orElseThrow(() -> {
+                    log.error("Car not found with ID: {}", carId);
+                    return new RuntimeException("Car not found with ID: " + carId);
+                });
+        log.debug("Car found: {} {}, status: {}", car.getBrand(), car.getModel(), car.getStatus());
 
         if (car.getStatus() != CarStatus.AVAILABLE) {
+            log.error("Car is not available for booking. Current status: {}", car.getStatus());
             throw new RuntimeException("Car is not available for booking");
         }
 
         // 3. Get pricing plan and snapshot the price
         PricingPlan pricingPlan = pricingService.findPricingPlan(categoryId, durationMonths, kmPackage)
-                .orElseThrow(() -> new RuntimeException(
-                        "No pricing plan found for category: " + categoryId +
-                                ", duration: " + durationMonths +
-                                ", km: " + kmPackage
-                ));
+                .orElseThrow(() -> {
+                    log.error("No pricing plan found for category: {}, duration: {}, km: {}", 
+                            categoryId, durationMonths, kmPackage);
+                    return new RuntimeException(
+                            "No pricing plan found for category: " + categoryId +
+                                    ", duration: " + durationMonths +
+                                    ", km: " + kmPackage
+                    );
+                });
+        log.debug("Pricing plan found: pricePerMonth={}", pricingPlan.getPricePerMonth());
 
         // 4. Calculate dates and total
         LocalDate endDate = startDate.plusMonths(durationMonths);
         BigDecimal pricePerMonth = pricingPlan.getPricePerMonth(); // snapshOT!!!!
         BigDecimal totalAmount = pricePerMonth.multiply(BigDecimal.valueOf(durationMonths));
+        log.debug("Calculated: endDate={}, pricePerMonth={}, totalAmount={}", endDate, pricePerMonth, totalAmount);
 
         // 5. create the booking
         Booking booking = new Booking();
@@ -69,17 +88,21 @@ public class BookingService {
         booking.setStatus(BookingStatus.PENDING);
 
         // 6. Save Booking
+        log.info("Saving booking to database...");
         Booking savedBooking = bookingRepository.save(booking);
+        log.info("Booking saved successfully with ID: {}", savedBooking.getId());
 
         // 7. mark car as rented
+        log.info("Marking car {} as rented", carId);
         carService.markAsRented(carId);
 
+        log.info("Booking creation completed successfully. Booking ID: {}", savedBooking.getId());
         return savedBooking;
     }
 
     // Get all bookings for a user
     public List<Booking> getUserBookings(Long userId) {
-        return bookingRepository.findByUserId(userId);
+        return bookingRepository.findByUser_Id(userId);
     }
     // Get booking by ID
     public Optional<Booking> findById(Long id) {
