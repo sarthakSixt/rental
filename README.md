@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚗 Car Rental Subscription Platform
+# Car Rental Subscription Platform
 
 **A modern, full-stack car rental application with Spring Boot backend and React frontend**
 
@@ -18,7 +18,7 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Features](#-features)
@@ -35,68 +35,68 @@
 
 ---
 
-## 🎯 Overview
+##  Overview
 
 The Car Rental Subscription Platform is a comprehensive full-stack application that allows users to browse, configure, and book car rentals with flexible subscription options. The platform features a modern dark-themed UI, real-time price calculations, secure authentication, and a complete booking management system.
 
 ### Key Highlights
 
-- ✨ **Modern UI/UX** - Beautiful dark theme with smooth animations
-- 🔒 **Secure Authentication** - JWT-based authentication with Spring Security
-- 💰 **Dynamic Pricing** - Real-time price calculation based on rental configuration
-- 📱 **Responsive Design** - Works seamlessly on desktop, tablet, and mobile
-- 🚀 **Fast Performance** - Optimized React frontend with Vite build tool
-- 🗄️ **Robust Backend** - Spring Boot with PostgreSQL for reliable data persistence
+-  **Modern UI/UX** - Beautiful dark theme with smooth animations
+-  **Secure Authentication** - JWT-based authentication with Spring Security
+-  **Dynamic Pricing** - Real-time price calculation based on rental configuration
+-  **Responsive Design** - Works seamlessly on desktop, tablet, and mobile
+-  **Fast Performance** - Optimized React frontend with Vite build tool
+-  **Robust Backend** - Spring Boot with PostgreSQL for reliable data persistence
 
 ---
 
-## ✨ Features
+## Features
 
-### 🔐 Authentication & Authorization
+### Authentication & Authorization
 - User registration and login
 - JWT token-based authentication
 - Protected routes and API endpoints
 - Secure password hashing with BCrypt
 - Session management
 
-### 🚗 Car Management
+### Car Management
 - Browse available cars with beautiful card layouts
 - Filter cars by category (Sedan, SUV, Luxury)
 - Filter cars by brand
 - View detailed car information
 - Real-time availability status
 
-### ⚙️ Flexible Configuration
+### Flexible Configuration
 - **Duration Options**: 1, 3, or 6 months
 - **KM Packages**: 500, 1000, or 2000 km/month
 - Real-time price calculation
 - Visual configuration interface
 
-### 💰 Pricing System
+### Pricing System
 - Dynamic pricing based on category, duration, and KM package
 - Price snapshot at booking time
 - Transparent pricing breakdown
 - Multiple pricing plans per category
 
-### 📅 Booking Management
+### Booking Management
 - Create bookings with date selection
 - View all bookings in user dashboard
 - Booking status tracking (Pending, Confirmed, Cancelled, Completed)
 - Booking history and details
 
-### 💳 Payment Processing
+### Payment Processing
 - Mock payment integration
 - Payment success/failure handling
 - Transaction ID generation
 - Payment confirmation
 
-### 📊 User Dashboard
+### User Dashboard
 - View all user bookings
 - Booking status overview
 - Quick access to booking details
 - User profile management
 
-### 🎨 UI/UX Features
+### UI/UX Features
 - Modern dark theme
 - Smooth animations and transitions
 - Glass morphism design elements
@@ -107,7 +107,7 @@ The Car Rental Subscription Platform is a comprehensive full-stack application t
 
 ---
 
-## 🏗️ Tech Stack
+## Tech Stack
 
 ### Backend
 
@@ -143,7 +143,7 @@ The Car Rental Subscription Platform is a comprehensive full-stack application t
 
 ---
 
-## 📸 Screenshots
+## Snapshots
 
 ### Landing Page
 <!-- Insert screenshot of the landing/home page here -->
@@ -182,7 +182,7 @@ The Car Rental Subscription Platform is a comprehensive full-stack application t
 
 ---
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 
@@ -374,7 +374,7 @@ curl -H "Authorization: Bearer YOUR_JWT_TOKEN" \
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 rental/
@@ -456,7 +456,7 @@ rental/
 
 ---
 
-## 📚 API Documentation
+## API Documentation
 
 ### Base URL
 
@@ -612,7 +612,7 @@ For complete API documentation, see [INTEGRATION_GUIDE.md](./INTEGRATION_GUIDE.m
 
 ---
 
-## 🗄️ Database Schema
+## Database Schema
 
 The application uses PostgreSQL with the following main tables:
 
@@ -692,7 +692,7 @@ payments
 
 ---
 
-## 🔒 Security
+## Security
 
 ### Authentication
 - **JWT Tokens** - Stateless authentication
@@ -757,7 +757,7 @@ Use the examples in the [Usage](#-usage) section or use tools like:
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -816,7 +816,7 @@ For detailed troubleshooting, see [INTEGRATION_GUIDE.md](./INTEGRATION_GUIDE.md)
 
 ---
 
-## 📖 Additional Documentation
+## Additional Documentation
 
 - **[SETUP.md](./SETUP.md)** - Detailed setup instructions
 - **[INTEGRATION_GUIDE.md](./INTEGRATION_GUIDE.md)** - Complete integration guide
@@ -827,7 +827,7 @@ For detailed troubleshooting, see [INTEGRATION_GUIDE.md](./INTEGRATION_GUIDE.md)
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -861,46 +861,15 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 📄 License
-
-This project is for educational purposes.
-
----
-
-## 👨‍💻 Author
+## Author
 
 **Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
-
----
-
-## 🙏 Acknowledgments
-
-- Spring Boot community for excellent documentation
-- React team for the amazing framework
-- Tailwind CSS for the utility-first CSS framework
-- All open-source contributors
-
----
-
-## 📞 Support
-
-If you encounter any issues or have questions:
-
-1. Check the [Troubleshooting](#-troubleshooting) section
-2. Review the [Additional Documentation](#-additional-documentation)
-3. Check backend and frontend logs
-4. Verify database connection
-5. Check browser console for errors
+- GitHub: [@sarthakporwal](https://github.com/sarthakporwal)
+- Email: sarthakporwal12@gmail.com
 
 ---
 
 <div align="center">
-
-**Made with ❤️ using Spring Boot and React**
-
-⭐ Star this repo if you find it helpful!
 
 [⬆ Back to Top](#-car-rental-subscription-platform)
 
