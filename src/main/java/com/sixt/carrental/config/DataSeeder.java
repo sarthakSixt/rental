@@ -4,10 +4,12 @@ import com.sixt.carrental.entity.*;
 import com.sixt.carrental.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor
@@ -16,10 +18,17 @@ public class DataSeeder implements CommandLineRunner {
     private final CategoryRepository categoryRepository;
     private final PricingPlanRepository pricingPlanRepository;
     private final CarRepository carRepository;
+    private final Environment environment;
 
     @Override
     @Transactional
     public void run(String... args) throws Exception {
+        // Skip data seeding during tests
+        // String datasourceUrl = environment.getProperty("spring.datasource.url", "");
+        // if (datasourceUrl.contains("h2") || datasourceUrl.contains("mem:")) {
+        //     System.out.println("Skipping data seeding in test environment");
+        //     return;
+        // }
 
         // Check if data already exists
         if (categoryRepository.count() > 0) {
@@ -113,15 +122,32 @@ public class DataSeeder implements CommandLineRunner {
     }
 
     private void createPricingPlan(Category category, Integer durationMonths,
-                                   Integer kmPackage, String pricePerMonth) {
-        PricingPlan plan = new PricingPlan();
-        plan.setCategory(category);
-        plan.setDurationMonths(durationMonths);
-        plan.setKmPackage(kmPackage);
-        plan.setPricePerMonth(new BigDecimal(pricePerMonth));
-        plan.setIsActive(true);
-        pricingPlanRepository.save(plan);
-    }
+        Integer kmPackage, String pricePerMonth) {
+            // Check if plan already exists
+            Optional<PricingPlan> existingPlan = pricingPlanRepository
+            .findByCategoryIdAndDurationMonthsAndKmPackageAndIsActiveTrue(
+            category.getId(), durationMonths, kmPackage);
+
+            if (existingPlan.isPresent()) {
+            // Update existing plan
+                PricingPlan plan = existingPlan.get();
+                plan.setPricePerMonth(new BigDecimal(pricePerMonth));
+                pricingPlanRepository.save(plan);
+                System.out.println("Updated pricing plan: " + category.getName() + 
+                " - " + durationMonths + " months, " + kmPackage + " km");
+            } else {
+            // Create new plan
+                PricingPlan plan = new PricingPlan();
+                plan.setCategory(category);
+                plan.setDurationMonths(durationMonths);
+                plan.setKmPackage(kmPackage);
+                plan.setPricePerMonth(new BigDecimal(pricePerMonth));
+                plan.setIsActive(true);
+                pricingPlanRepository.save(plan);
+                System.out.println("Created pricing plan: " + category.getName() + 
+                " - " + durationMonths + " months, " + kmPackage + " km");
+            }
+        }
 
     private void createCar(Category category, String brand, String model, String imageUrl) {
         Car car = new Car();

@@ -56,10 +56,6 @@ public class BookingController {
             log.error("Error creating booking: {}", e.getMessage(), e);
             return ResponseEntity.badRequest()
                     .body(ApiResponse.error(e.getMessage()));
-        } catch (DataAccessException e) {
-            log.error("Database error creating booking: {}", e.getMessage(), e);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(ApiResponse.error("Database error: " + e.getMessage()));
         } catch (Exception e) {
             log.error("Unexpected error creating booking: {}", e.getMessage(), e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
