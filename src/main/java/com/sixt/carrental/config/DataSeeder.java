@@ -97,20 +97,20 @@ public class DataSeeder implements CommandLineRunner {
             System.out.println("Created 27 pricing plans");
 
             // CREATE CARS
-            createCar(sedanCategory, "Honda", "City", "https://example.com/honda.jpg");
-            createCar(sedanCategory, "Toyota", "Camry", "https://example.com/toyota.jpg");
-            createCar(sedanCategory, "Hyundai", "Verna", "https://example.com/hyundai.jpg");
-            createCar(sedanCategory, "Volkswagen", "Virtus", "https://example.com/vw.jpg");
+            createCar(sedanCategory, "Honda", "City", "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&h=600&fit=crop");
+            createCar(sedanCategory, "Toyota", "Camry", "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=800&h=600&fit=crop");
+            createCar(sedanCategory, "Hyundai", "Verna", "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&h=600&fit=crop");
+            createCar(sedanCategory, "Volkswagen", "Virtus", "https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=800&h=600&fit=crop");
 
-            createCar(suvCategory, "Toyota", "Fortuner", "https://example.com/fortuner.jpg");
-            createCar(suvCategory, "Mahindra", "XUV700", "https://example.com/xuv.jpg");
-            createCar(suvCategory, "Hyundai", "Creta", "https://example.com/creta.jpg");
-            createCar(suvCategory, "Kia", "Seltos", "https://example.com/seltos.jpg");
+            createCar(suvCategory, "Toyota", "Fortuner", "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=800&h=600&fit=crop");
+            createCar(suvCategory, "Mahindra", "XUV700", "https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=800&h=600&fit=crop");
+            createCar(suvCategory, "Hyundai", "Creta", "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=800&h=600&fit=crop");
+            createCar(suvCategory, "Kia", "Seltos", "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&h=600&fit=crop");
 
-            createCar(luxuryCategory, "BMW", "5 Series", "https://example.com/bmw5.jpg");
-            createCar(luxuryCategory, "Mercedes-Benz", "E-Class", "https://example.com/merc.jpg");
-            createCar(luxuryCategory, "Audi", "A6", "https://example.com/audi.jpg");
-            createCar(luxuryCategory, "BMW", "X5", "https://example.com/bmwx5.jpg");
+            createCar(luxuryCategory, "BMW", "5 Series", "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop");
+            createCar(luxuryCategory, "Mercedes-Benz", "E-Class", "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&h=600&fit=crop");
+            createCar(luxuryCategory, "Audi", "A6", "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=800&h=600&fit=crop");
+            createCar(luxuryCategory, "BMW", "X5", "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop");
 
             System.out.println("Created 12 cars");
             System.out.println("Sample data seeded successfully!");
